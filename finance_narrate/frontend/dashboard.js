@@ -1,5 +1,9 @@
 // ===== Configuration =====
-const API_BASE = 'http://localhost:8000';
+// In production, set this to your Render backend URL e.g. https://finance-narrate-ai.onrender.com
+// In development, use http://localhost:8000
+const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:8000'
+  : 'https://finance-narrate-ai-backend.onrender.com';
 
 // ===== Module-level state =====
 let currentFileId = null;
